@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo|Oswald');
+
+body {
+    font-family: 'Heebo', "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    background: cornsilk;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: 'Oswald';
+}
+
+header, main {
+    padding: 8px;
+}
+
+main {
+    position: relative;
+}
