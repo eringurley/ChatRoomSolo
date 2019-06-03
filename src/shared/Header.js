@@ -16,11 +16,11 @@ class Header extends Component {
         return dom;
     }   
     renderTemplate() {
-        // const title = this.props.title || document.title;
+        const title = this.props.title || document.title;
 
         return /*html*/`
             <header>
-                <h1>Hello World</h1>
+                <h1>${title}</h1>
             </header>
         `;
     }
