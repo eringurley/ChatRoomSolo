@@ -31,7 +31,6 @@ class AuthApp extends Component {
                 <main>
                     <p>Get signed in to chat with your friends!</p>
                     <div id="firebaseui-auth-container">
-                        <!--firebaseui auth will go here...-->
                     </div>
                 </main>
             </div>
