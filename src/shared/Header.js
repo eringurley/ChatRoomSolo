@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         const dom = this.rendorDOM();
         const profile = new Profile();
-        dom.appendChile(profile.render());
+        dom.appendChild(profile.render());
 
         auth.onAuthStateChanged(user => {
             profile.update({ user });
