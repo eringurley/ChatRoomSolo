@@ -1,5 +1,5 @@
-import Component from '../Component.js';
-import Header from '../shared/Header.js';
+import Component from './Component.js';
+import Header from './shared/Header.js';
 
 class App extends Component {
 
