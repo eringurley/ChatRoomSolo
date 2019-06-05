@@ -2,6 +2,7 @@ import Component from './Component.js';
 import Header from './shared/Header.js';
 import ChatList from '../src/chat/ChatList.js';
 import { chatRef } from './services/firebase.js';
+import AddChatRoom from './AddChatRoom.js';
 
 class App extends Component {
 
@@ -22,7 +23,9 @@ class App extends Component {
         const chatListDOM = chatList.renderDOM();
         main.appendChild(chatListDOM);
 
-        
+        const addChat = new AddChatRoom({ chat: [] });
+        const addChatDOM = addChat.renderDOM();
+        main.appendChild(addChatDOM);
 
         //fetch
         chatRef
