@@ -8,6 +8,7 @@ class ChatItem extends Component {
     }
 
     renderTemplate() {
+        const chat = this.props.chat;
         return /*html*/`
             <li class="chat-item">
                 <h2>Chat List</h2>

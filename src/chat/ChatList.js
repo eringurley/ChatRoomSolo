@@ -24,6 +24,7 @@ class ChatList extends Component {
     renderTemplate() {
         return /*html*/`
             <ul class="chat-list">hello</ul>
+            
         `;
     }
 }

@@ -22,6 +22,8 @@ class App extends Component {
         const chatListDOM = chatList.renderDOM();
         main.appendChild(chatListDOM);
 
+        
+
         //fetch
         chatRef
             .on('value', snapshot => {

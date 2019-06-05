@@ -11,6 +11,7 @@ class Header extends Component {
 
         auth.onAuthStateChanged(user => {
             profile.update({ user });
+        
         });
 
         return dom;
