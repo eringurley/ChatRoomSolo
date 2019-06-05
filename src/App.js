@@ -5,6 +5,10 @@ import { chatRef } from './services/firebase.js';
 
 class App extends Component {
 
+    //in app where rendering lists, feed it an empty array and the value needs to match 
+//chat list passing same line of props, use that to for Each
+//rendertemplate, bring in signular prop and need to pass it singular, then interpolating
+
     render() {
         const dom = this.renderDOM();
 
@@ -14,7 +18,7 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
-        const chatList = new ChatList();
+        const chatList = new ChatList({ chat: [] });
         const chatListDOM = chatList.renderDOM();
         main.appendChild(chatListDOM);
 
@@ -23,6 +27,7 @@ class App extends Component {
             .on('value', snapshot => {
                 const value = snapshot.val();
                 const chat = value ? Object.values(value) : [];
+                console.log(chat);
                 chatList.update({ chat });
             });
 
