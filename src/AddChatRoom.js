@@ -11,7 +11,6 @@ class AddChatRoom extends Component {
             event.preventDefault();
             const chatsRef = chatRef.push();
 
-            //set the data of new ref node:
             chatsRef.set({
                 key: chatRef.key,
                 title: input.value,

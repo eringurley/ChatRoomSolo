@@ -17,5 +17,4 @@ export const userFavoritesRef = db.ref('userFavorites');
 
 export const chatRef = db.ref('chatRooms');
 
-// play with the db in the console:
 window.db = db;

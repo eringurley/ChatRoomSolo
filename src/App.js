@@ -6,10 +6,6 @@ import AddChatRoom from './AddChatRoom.js';
 
 class App extends Component {
 
-    //in app where rendering lists, feed it an empty array and the value needs to match 
-//chat list passing same line of props, use that to for Each
-//rendertemplate, bring in signular prop and need to pass it singular, then interpolating
-
     render() {
         const dom = this.renderDOM();
 
@@ -32,7 +28,6 @@ class App extends Component {
             .on('value', snapshot => {
                 const value = snapshot.val();
                 const chats = value ? Object.values(value) : [];
-                console.log(chats);
                 chatList.update({ chats });
             });
 
