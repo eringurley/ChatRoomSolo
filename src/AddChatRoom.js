@@ -1,34 +1,33 @@
-import Component from '../Component.js';
-import { auth, chatRef } from '../services/firebase.js';
+import Component from './Component.js';
+import { auth, chatRef } from './services/firebase.js';
 
 
 class AddChatRoom extends Component {
     render() {
         const form = this.renderDOM();
-        const addChat = this.props.addChat;
+        const input = form.querySelector('input');
 
         form.addEventListener('submit', event => {
             event.preventDefault();
-            const formData = new FormData(form);
+            const chatsRef = chatRef.push();
 
-            const addChat = {
-                id: chatRef.key,
+            //set the data of new ref node:
+            chatsRef.set({
+                key: chatRef.key,
+                title: input.value,
                 owner: auth.currentUser.uid,
-                title: formData.get('chat');
-            };
-
-            form.reset();
-            chatRef.set(addChat).then(() => {
-            // reset the form
-            });
-
+            })
+                .then(() => {
+                    form.reset();
+                });
         });
+        return form;
     }
 
     renderTemplate() {
         return /*html*/`
             <form>
-                <label>Chat Room<input name="chat-room"></label>
+                <input required>
                 <button>Add</button>
             </form>
         `;
