@@ -8,9 +8,14 @@ const config = {
     appId: '1:757552031065:web:a3bce3dcc4a9857f'
 };
 
-export const app = firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const db = firebase.database();
 
-export const chatRef = db.ref('chat');
+export const userFavoritesRef = db.ref('userFavorites');
+
+export const chatRef = db.ref('chatRooms');
+
+// play with the db in the console:
+window.db = db;
