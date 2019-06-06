@@ -13,29 +13,28 @@ class App extends Component {
     render() {
         const dom = this.renderDOM();
 
-        const header = new Header({ title: 'Welcome to Chats' });
-        const headerDOM = header.render();
-        
         const main = dom.querySelector('main');
+        
+        const header = new Header({ title: 'Welcome to chats' });
+        const headerDOM = header.render();
         dom.insertBefore(headerDOM, main);
 
-        const chatList = new ChatList({ chat: [] });
-        const chatListDOM = chatList.renderDOM();
+        const chatList = new ChatList({ chats: [] });
+        const chatListDOM = chatList.render();
         main.appendChild(chatListDOM);
 
-        const addChat = new AddChatRoom({ chat: [] });
-        const addChatDOM = addChat.renderDOM();
+        const addChatRoom = new AddChatRoom({ chats: [] });
+        const addChatDOM = addChatRoom.render();
         main.appendChild(addChatDOM);
 
         //fetch
         chatRef
             .on('value', snapshot => {
                 const value = snapshot.val();
-                const chat = value ? Object.values(value) : [];
-                console.log(chat);
-                chatList.update({ chat });
+                const chats = value ? Object.values(value) : [];
+                console.log(chats);
+                chatList.update({ chats });
             });
-
 
         return dom;
     }
