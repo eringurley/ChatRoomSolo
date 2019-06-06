@@ -7,9 +7,8 @@ test('reders remplate from chat object', assert => {
     const chatItem = new ChatItem({ chat });
 
     const expected = /*html*/ `
-        <li>chat
+        <li>
             <a href="./chat.html?key=${chat.key}">${chat.name}</a>
-            <button>Remove</button>
         </li>
     `;
 
