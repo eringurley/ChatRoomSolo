@@ -19,7 +19,6 @@ test('normalizes whitespace', (assert) => {
     `;
 
     // Act
-    // now built in as custom assert
 
     // Assert
     assert.htmlEqual(html, expected);
